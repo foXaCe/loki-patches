@@ -551,7 +551,7 @@ val gmsCoreSupportPatch = bytecodePatch(
     name = "GmsCore support (Doc Scanner)",
     description = "MicroG-RE integration for Doc Scanner: routes Google sign-in and Google Drive through " +
         "MicroG-RE instead of Google Play services, and keeps ML Kit's module loader on real Play services so " +
-        "receipt OCR keeps working. MicroG-RE has to be installed and signed in to a Google account.",
+        "text recognition (OCR) keeps working on phones with Play services. MicroG-RE has to be installed and signed in to a Google account.",
     default = false
 ) {
     compatibleWith(COMPATIBILITY_DOCSCANNER)
