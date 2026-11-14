@@ -4,6 +4,15 @@
 
 <div align="center">
 
+### Your apps. Your rules. One Loki experience.
+
+A growing collection of open-source Android patches for Morphe. Remove clutter, take control of your privacy and
+make everyday apps work the way you want.
+
+**Every patched app gets the same Loki Patches menu.**
+
+<br/>
+
 [![Latest release](https://img.shields.io/github/v/release/lokesh-sparrow/loki-patches?sort=semver&style=for-the-badge&label=release&labelColor=0d1117&color=22d3ee)](https://github.com/lokesh-sparrow/loki-patches/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/lokesh-sparrow/loki-patches/total?style=for-the-badge&labelColor=0d1117&color=0ea5e9)](https://github.com/lokesh-sparrow/loki-patches/releases)
 <!-- BADGES_START -->
