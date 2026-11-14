@@ -53,6 +53,43 @@
       "options": []
     },
     {
+      "name": "Allow clone",
+      "description": "Lets the app run under a package name made by the Change package name patch: the app compares its own package name with the original at start-up and shuts itself down when they differ.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.cv.docscanner",
+          "name": "Doc Scanner",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "6.9.9",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Anonymous profile viewing",
       "description": "Adds an option (off by default, experimental) to visit profiles without being listed in \"Who viewed your profile\": the analytics events of profile pages are not sent.",
       "default": true,
@@ -153,6 +190,28 @@
       "options": []
     },
     {
+      "name": "Change package name",
+      "description": "Changes the package name by adding a suffix (\".loki\" by default), so the patched app installs next to the original app instead of replacing it. Some apps check their own package name and need a small extra patch to run under the new one.",
+      "default": false,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": null,
+      "options": [
+        {
+          "key": "suffix",
+          "title": "Package suffix",
+          "description": "Appended to the original package name. Must start with a dot.",
+          "required": true,
+          "type": "kotlin.String",
+          "default": ".loki",
+          "values": null
+        }
+      ]
+    },
+    {
       "name": "Copy text",
       "description": "Long press a post, comment or any other text to select and copy it in place, like on Reddit.",
       "default": true,
@@ -233,6 +292,44 @@
             },
             {
               "version": "4.1.1270",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Declutter",
+      "description": "Removes the promo banner on the home screen and the cross-promotion and cloud-login cards on the save-success screen.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.cv.docscanner",
+          "name": "Doc Scanner",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "6.9.9",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
@@ -351,6 +448,43 @@
       "options": []
     },
     {
+      "name": "Enable premium features",
+      "description": "Turns on the app's paid features (unlimited scans, cloud upload, OCR, PDF passwords, compression, signatures, themes). The app skips its ad slots for paid users, so the ads go away with them.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.cv.docscanner",
+          "name": "Doc Scanner",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "6.9.9",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Feed filters",
       "description": "Adds a set of filters that are off until turned on in Loki Patches: focus mode, celebrations, job cards, reposts, posts from other people's activity, \"Recommended for you\", video posts, games, the \"New posts\" pill and \"See translation\".",
       "default": true,
@@ -398,6 +532,18 @@
           ]
         }
       ],
+      "options": []
+    },
+    {
+      "name": "GmsCore support",
+      "description": "MicroG-RE integration: routes Google sign-in and Google APIs (such as Google Drive) through MicroG-RE instead of Google Play services, so they work in the patched app. MicroG-RE has to be installed and signed in to a Google account.",
+      "default": false,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": null,
       "options": []
     },
     {
@@ -953,6 +1099,46 @@
         }
       ],
       "options": []
+    },
+    {
+      "name": "Remove ads and trackers",
+      "description": "Removes ads, analytics and crash reporting, and the advertising ID.",
+      "default": false,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": null,
+      "options": [
+        {
+          "key": "ads",
+          "title": "Ads",
+          "description": "Stops the ad SDKs from starting and from loading ads: Google AdMob, AppLovin MAX, Unity Ads, Pangle, Meta Audience Network, InMobi, ironSource, Vungle, Mintegral, myTarget and BIGO.",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
+        },
+        {
+          "key": "analytics",
+          "title": "Analytics and crash reporting",
+          "description": "Turns off Firebase Analytics and Crashlytics, the Facebook SDK, AppMetrica, AppsFlyer and the Play install referrer, when the app has them.",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
+        },
+        {
+          "key": "advertisingId",
+          "title": "Advertising ID",
+          "description": "Removes the advertising ID permissions so no SDK can read the device's advertising ID.",
+          "required": false,
+          "type": "kotlin.Boolean",
+          "default": true,
+          "values": null
+        }
+      ]
     },
     {
       "name": "Remove gaps and dividers",
