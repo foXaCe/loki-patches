@@ -3,7 +3,7 @@
 
 ![version](https://img.shields.io/badge/version-26.43.5-2563eb?style=for-the-badge&labelColor=0d1117) ![patches](https://img.shields.io/badge/patches-2-14b8a6?style=for-the-badge&labelColor=0d1117) ![file](https://img.shields.io/badge/file-APKM-0ea5e9?style=for-the-badge&labelColor=0d1117) ![menu](https://img.shields.io/badge/menu-Profile%20menu%20%C2%B7%20Settings-6e7681?style=for-the-badge&labelColor=0d1117)
 
-[← All apps](../../README.md#apps)&nbsp;&nbsp;•&nbsp;&nbsp;`com.truecaller`&nbsp;&nbsp;•&nbsp;&nbsp;[v3.0.0](https://github.com/lokesh-sparrow/loki-patches/releases/tag/v3.0.0)
+[← All apps](../../README.md#apps)&nbsp;&nbsp;•&nbsp;&nbsp;`com.truecaller`&nbsp;&nbsp;•&nbsp;&nbsp;[v3.0.1](https://github.com/lokesh-sparrow/loki-patches/releases/tag/v3.0.1)
 
 **🎯 Supported versions:** `26.43.5`
 <!-- HEADER_END -->
@@ -47,6 +47,6 @@ numbers, fraud insurance) open but stay empty, because their data is not in the 
 <!-- PATCHES_START -->
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |---|---|---|
-| **Enable premium features (Truecaller)** | Makes every premium feature the app decides on the device available, and the plan read as active instead of Free, and stops the after-call screen. Features whose content comes from Truecaller's servers (who viewed me, caller ID for unknown numbers, fraud insurance) open but stay empty - their data is not in the app. |  |
+| **Enable premium features (Truecaller)** | Makes every premium feature the app decides on the device available, and the plan read as active instead of Free, and hides the after-call screen (switch in Loki Patches > Calls). Features whose content comes from Truecaller's servers (who viewed me, caller ID for unknown numbers, fraud insurance) open but stay empty - their data is not in the app. |  |
 | **GmsCore support (Truecaller)** | Routes Google sign-in, the Google Drive backup of contacts and call logs, and Firebase push through MicroG-RE (GmsCore) instead of Google Play services. Signs the FCM registration with Truecaller's original certificate, so notifications still arrive on a re-signed build. MicroG-RE has to be installed and signed in to a Google account. |  |
 <!-- PATCHES_END -->

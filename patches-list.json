@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "patches": [
     {
       "name": "AMOLED black (Splitwise)",
@@ -560,7 +560,7 @@
     },
     {
       "name": "Enable premium features (Truecaller)",
-      "description": "Makes every premium feature the app decides on the device available, and the plan read as active instead of Free, and stops the after-call screen. Features whose content comes from Truecaller's servers (who viewed me, caller ID for unknown numbers, fraud insurance) open but stay empty - their data is not in the app.",
+      "description": "Makes every premium feature the app decides on the device available, and the plan read as active instead of Free, and hides the after-call screen (switch in Loki Patches > Calls). Features whose content comes from Truecaller's servers (who viewed me, caller ID for unknown numbers, fraud insurance) open but stay empty - their data is not in the app.",
       "default": true,
       "category": null,
       "dependencies": [
@@ -699,7 +699,7 @@
     },
     {
       "name": "GmsCore support (Doc Scanner)",
-      "description": "MicroG-RE integration for Doc Scanner: routes Google sign-in and Google Drive through MicroG-RE instead of Google Play services, and keeps ML Kit's module loader on real Play services so receipt OCR keeps working. MicroG-RE has to be installed and signed in to a Google account.",
+      "description": "MicroG-RE integration for Doc Scanner: routes Google sign-in and Google Drive through MicroG-RE instead of Google Play services, and keeps ML Kit's module loader on real Play services so text recognition (OCR) keeps working on phones with Play services. MicroG-RE has to be installed and signed in to a Google account.",
       "default": false,
       "category": null,
       "dependencies": [

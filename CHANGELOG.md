@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/lokesh-sparrow/loki-patches/compare/v3.0.0...v3.0.1) (2026-11-14)
+
+### 🐛 Bug Fixes
+
+* **docscanner:** GmsCore support description says text recognition, not receipt OCR ([0ea4ad2](https://github.com/lokesh-sparrow/loki-patches/commit/0ea4ad2b24c68157390ea4612a03fd18d501fc75))
+* **truecaller:** premium description says the after-call screen has a switch ([daf6681](https://github.com/lokesh-sparrow/loki-patches/commit/daf66811494192be07d69908189732ed87992589))
+
 ## 3.0.0 (2026-11-14)
 
 ### New Apps

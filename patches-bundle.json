@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-14T18:16:15",
-  "description": "### New Apps\n- **Splitwise:** Pro features, no Pro ads and upsells, AMOLED black (switch in Loki Patches › Appearance), analytics and crash reporting removed, and Google sign-in through MicroG-RE.\n- **Truecaller:** premium features, the after-call screen hidden (switch in Loki Patches › Calls), and Google sign-in and Drive backup through MicroG-RE. The Loki Patches entry replaces the Android watch entry.\n- **Doc Scanner:** full version, declutter, allow clone, and Google sign-in through MicroG-RE.\n\n### New Features\n- **LinkedIn:** Loki Patches menu: Patch status, Backup & restore to a file, Diagnostics with Copy and Share report, and full-screen About and Credits pages. Same patches and settings as before; updates in place.\n- Change package name and Remove ads and trackers: new patches for any app, off by default.\n\n**36 patches for 4 apps.** Full list in the [README](https://github.com/lokesh-sparrow/loki-patches#apps).",
-  "download_url": "https://github.com/lokesh-sparrow/loki-patches/releases/download/v3.0.0/patches-3.0.0.mpp",
+  "created_at": "2026-11-14T19:08:48",
+  "description": "## [3.0.1](https://github.com/lokesh-sparrow/loki-patches/compare/v3.0.0...v3.0.1) (2026-11-14)\n\n### 🐛 Bug Fixes\n\n* **docscanner:** GmsCore support description says text recognition, not receipt OCR ([0ea4ad2](https://github.com/lokesh-sparrow/loki-patches/commit/0ea4ad2b24c68157390ea4612a03fd18d501fc75))\n* **truecaller:** premium description says the after-call screen has a switch ([daf6681](https://github.com/lokesh-sparrow/loki-patches/commit/daf66811494192be07d69908189732ed87992589))",
+  "download_url": "https://github.com/lokesh-sparrow/loki-patches/releases/download/v3.0.1/patches-3.0.1.mpp",
   "signature_download_url": "",
-  "version": "3.0.0"
+  "version": "3.0.1"
 }
