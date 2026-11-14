@@ -12,6 +12,7 @@ README.md
 docs/apps/<slug>.md  (created from a template the first time an app appears)
     <!-- HEADER_START --> ... <!-- HEADER_END -->     title, badges, supported versions
     <!-- PATCHES_START --> ... <!-- PATCHES_END -->   the app's patch table
+README also has <!-- BADGES_START --> ... <!-- BADGES_END --> for the apps and patches count badges.
 
 Every app in the bundle needs an entry in apps.json and an icon in assets/icons/<package>.svg|png;
 otherwise the script fails, so an app never ships undocumented. Above CATEGORY_THRESHOLD apps the
@@ -125,7 +126,7 @@ def main(argv):
 
     # README index
     head = f"> **[v{version}]({release})**{SEP}`{branch}`{SEP}**{len(apps)}** {plural(len(apps), 'app')}{SEP}**{total}** patches"
-    featured = [p for p in order if info[p].get("featured")]
+    featured = sorted((p for p in order if info[p].get("featured")), key=lambda p: info[p]["featured"])
     cards = "\n".join(
         f'<td align="center" width="170"><a href="docs/apps/{info[p]["slug"]}.md"><img src="{icon(p, root)}" width="44" '
         f'height="44" alt=""><br><b>{info[p]["name"]}</b></a><br><sub>{len(apps[p]["patches"])} '
@@ -158,6 +159,11 @@ def main(argv):
                   patch_table(generic.values()), ""]
     text = readme.read_text(encoding="utf-8")
     text = replace_block(text, "APPS", "\n".join(parts), readme)
+    badges = " ".join([
+        f"[{badge('apps', len(apps), '2563eb')}](#apps)",
+        f"[{badge('patches', total, '14b8a6')}](#apps)",
+    ])
+    text = replace_block(text, "BADGES", badges, readme)
     readme.write_text(text, encoding="utf-8", newline="\n")
 
     # Per-app pages

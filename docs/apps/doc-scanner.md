@@ -10,12 +10,38 @@
 
 ## Features
 
-| | |
+| Feature | What you get |
 |---|---|
-| ⭐ **Full version** | Premium unlocked |
-| 🧹 **Declutter** | Promotions and "follow us" clutter removed |
-| 👯 **Allow clone** | Works next to the original when installed with a changed package name |
-| 🔑 **Google sign-in** | Cloud sign-in through microG RE (optional patch) |
+| ⭐ **Full version** | Unlimited scans, cloud upload, OCR, PDF passwords, compression, signatures and themes; the ads go away with it |
+| 🧹 **Declutter** | The home-screen promo banner, and the cross-promotion and cloud-login cards after saving, are removed |
+| 👯 **Allow clone** | Runs next to the original app when you also tick **Change package name** |
+| 🔑 **Google sign-in** | Cloud sign-in and Google Drive through MicroG-RE (optional patch) |
+
+## How-to
+
+### Open the Loki Patches menu
+
+Open it from the side menu, or long press the Doc Scanner icon on your home screen → **Loki Patches**.
+
+### Install next to the original app
+
+Tick **Change package name** (it adds `.loki` to the package name) together with **Allow clone**. Without Allow
+clone, the app notices the new name and closes itself at start-up.
+
+### Sign in with Google
+
+1. Install [MicroG-RE](https://github.com/MorpheApp/microg-RE) and sign in to your Google account in it.
+2. In Morphe Manager, tick **GmsCore support (Doc Scanner)** when you patch Doc Scanner.
+3. Use **Continue with Google** in Doc Scanner as usual.
+
+## FAQ
+
+**Which file do I download?**
+The **APKM** bundle from APKMirror, version 6.9.9.
+
+**Text recognition (OCR) fails with "Download failed".**
+Doc Scanner downloads its OCR engine from Google Play services. MicroG-RE can't provide it, so OCR needs real Play
+services on the phone; scanning and everything else work without it.
 
 ## Patches
 

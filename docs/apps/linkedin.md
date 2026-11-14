@@ -10,7 +10,7 @@
 
 ## Features
 
-| | |
+| Feature | What you get |
 |---|---|
 | ✂️ **Copy text** | Long press any post, comment or profile text to select and copy it, right where it is |
 | 🚫 **No ads** | Promoted posts, promoted jobs, Premium and AI upsells, sponsored messages |
@@ -28,9 +28,19 @@
 | 🖼️ **Tap to hide in viewers** | Tap a document or video in full screen to hide its caption and buttons |
 | ⋯ **Post menu items** | Copy text, Download media and Save as PDF in a post's menu |
 | 🧭 **Hide bottom tabs** | Take My Network and Jobs out of the bottom bar |
-| 🔑 **Google sign-in** | "Continue with Google" through microG RE |
+| 🔑 **Google sign-in** | "Continue with Google" through MicroG-RE |
 
 ## How-to
+
+### Open the Loki Patches menu
+
+Open it from the **Me** panel (tap your profile photo), or long press the LinkedIn icon on your home screen → **Loki Patches**.
+
+### Sign in with Google
+
+1. Install [MicroG-RE](https://github.com/MorpheApp/microg-RE) and sign in to your Google account in it.
+2. In Morphe Manager, tick **GmsCore support** when you patch LinkedIn.
+3. Use **Continue with Google** in LinkedIn as usual.
 
 ### Copy text
 

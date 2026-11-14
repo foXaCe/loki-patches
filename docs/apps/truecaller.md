@@ -10,22 +10,37 @@
 
 ## Features
 
-| | |
+| Feature | What you get |
 |---|---|
 | ⭐ **Premium features** | No ads, premium badge, incognito, ghost call, extended spam blocking, call recording, announce call, family sharing |
-| 📵 **No after-call screen** | Skip the screen Truecaller shows when a call ends (switchable) |
-| ☁️ **Google sign-in and Drive backup** | Through microG RE (optional patch) |
+| 📵 **No after-call screen** | The screen Truecaller shows when a call ends is skipped, with a switch in the Loki Patches menu |
+| ☁️ **Google sign-in and Drive backup** | Through MicroG-RE (optional patch) |
 
-Features whose content comes from Truecaller's servers (who viewed me, who searched for me, caller ID for unknown
-numbers, fraud insurance) open but stay empty.
+## How-to
+
+### Open the Loki Patches menu
+
+Open it from the profile menu or **Settings**: the entry with the puzzle icon, where Truecaller showed its Android watch entry, or long press the Truecaller icon on your home screen → **Loki Patches**.
+
+### Show or hide the after-call screen
+
+Loki Patches → **Calls** → **Hide after-call screen**. It applies from the next call; no restart needed.
+
+### Sign in with Google and back up to Drive
+
+1. Install [MicroG-RE](https://github.com/MorpheApp/microg-RE) and sign in to your Google account in it.
+2. In Morphe Manager, tick **GmsCore support (Truecaller)** when you patch Truecaller.
+3. Use **Continue with Google** in Truecaller as usual.
+4. Turn on backup in Truecaller's settings; it is saved to your Google Drive through MicroG-RE.
 
 ## FAQ
 
-**Where is the after-call screen switch?**
-Loki Patches → **Calls**. It applies from the next call; no restart needed.
+**Which file do I download?**
+The **APKM** bundle from APKMirror, version 26.43.5.
 
-**Where is the Loki Patches entry?**
-In the profile menu and in **Settings**, where Truecaller showed its Android watch entry.
+**Some premium screens are empty.**
+Features whose content comes from Truecaller's servers (who viewed me, who searched for me, caller ID for unknown
+numbers, fraud insurance) open but stay empty, because their data is not in the app.
 
 ## Patches
 

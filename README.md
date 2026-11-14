@@ -6,6 +6,9 @@
 
 [![Latest release](https://img.shields.io/github/v/release/lokesh-sparrow/loki-patches?sort=semver&style=for-the-badge&label=release&labelColor=0d1117&color=22d3ee)](https://github.com/lokesh-sparrow/loki-patches/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/lokesh-sparrow/loki-patches/total?style=for-the-badge&labelColor=0d1117&color=0ea5e9)](https://github.com/lokesh-sparrow/loki-patches/releases)
+<!-- BADGES_START -->
+[![apps](https://img.shields.io/badge/apps-4-2563eb?style=for-the-badge&labelColor=0d1117)](#apps) [![patches](https://img.shields.io/badge/patches-36-14b8a6?style=for-the-badge&labelColor=0d1117)](#apps)
+<!-- BADGES_END -->
 [![Morphe](https://img.shields.io/badge/patches%20for-Morphe-06b6d4?style=for-the-badge&labelColor=0d1117)](https://morphe.software)
 [![License](https://img.shields.io/github/license/lokesh-sparrow/loki-patches?style=for-the-badge&labelColor=0d1117&color=6e7681)](LICENSE)
 
@@ -39,10 +42,10 @@ for its features, patches and FAQ.
 
 <table>
 <tr>
-<td align="center" width="170"><a href="docs/apps/doc-scanner.md"><img src="assets/icons/com.cv.docscanner.png" width="44" height="44" alt=""><br><b>Doc Scanner</b></a><br><sub>4 patches</sub><br><sub>Full version, no clutter, clone</sub></td>
 <td align="center" width="170"><a href="docs/apps/linkedin.md"><img src="assets/icons/com.linkedin.android.svg" width="44" height="44" alt=""><br><b>LinkedIn</b></a><br><sub>23 patches</sub><br><sub>Copy text, downloads, ad-free feed, ghost chat</sub></td>
 <td align="center" width="170"><a href="docs/apps/splitwise.md"><img src="assets/icons/com.Splitwise.SplitwiseMobile.png" width="44" height="44" alt=""><br><b>Splitwise</b></a><br><sub>5 patches</sub><br><sub>Pro features, no upsells, AMOLED black</sub></td>
 <td align="center" width="170"><a href="docs/apps/truecaller.md"><img src="assets/icons/com.truecaller.png" width="44" height="44" alt=""><br><b>Truecaller</b></a><br><sub>2 patches</sub><br><sub>Premium features, no after-call screen</sub></td>
+<td align="center" width="170"><a href="docs/apps/doc-scanner.md"><img src="assets/icons/com.cv.docscanner.png" width="44" height="44" alt=""><br><b>Doc Scanner</b></a><br><sub>4 patches</sub><br><sub>Full version, no clutter, clone</sub></td>
 </tr>
 </table>
 

@@ -10,17 +10,38 @@
 
 ## Features
 
-| | |
+| Feature | What you get |
 |---|---|
 | ⭐ **Pro features** | Unlimited expenses, receipt scanning, charts, search, currency conversion, itemization, default splits, totals history and export |
-| 🚫 **No Pro upsells** | The "Get Pro" cards, banners and Pro rows are gone |
-| ⚫ **AMOLED black** | Real black in dark mode, switchable in the Loki Patches menu |
-| 🔑 **Google sign-in** | Through microG RE (optional patch) |
+| 🚫 **No Pro upsells** | The "Get Pro" cards, banners and Pro rows, and the full-screen ad after adding an expense, are gone |
+| ⚫ **AMOLED black** | Real black in dark mode, with a switch in the Loki Patches menu |
+| 🛡️ **No analytics** | Firebase Analytics, Crashlytics and advertising-ID collection turned off |
+| 🔑 **Google sign-in** | Through MicroG-RE (optional patch) |
+
+## How-to
+
+### Open the Loki Patches menu
+
+Open it from the **Account** tab, or long press the Splitwise icon on your home screen → **Loki Patches**.
+
+### Switch AMOLED black on or off
+
+Loki Patches → **Appearance** → **AMOLED black**, then restart Splitwise when the menu offers it. It only changes dark
+mode; light mode stays as it is.
+
+### Sign in with Google
+
+1. Install [MicroG-RE](https://github.com/MorpheApp/microg-RE) and sign in to your Google account in it.
+2. In Morphe Manager, tick **GmsCore support (Splitwise)** when you patch Splitwise.
+3. Use **Continue with Google** in Splitwise as usual.
 
 ## FAQ
 
-**Where is the AMOLED switch?**
-Loki Patches → **Appearance**. Restart Splitwise after changing it.
+**Which file do I download?**
+The plain **APK** from APKMirror, version 26.11.1.
+
+**Can I keep using my existing account?**
+Yes. Sign in with your e-mail and password, or with Google through MicroG-RE.
 
 ## Patches
 
