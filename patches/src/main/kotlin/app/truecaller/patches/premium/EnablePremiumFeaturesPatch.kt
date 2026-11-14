@@ -49,7 +49,7 @@ private val premiumFlag = resourcePatch {
 val enablePremiumFeaturesPatch = bytecodePatch(
     name = "Enable premium features (Truecaller)",
     description = "Makes every premium feature the app decides on the device available, and the plan read as active " +
-        "instead of Free, and stops the after-call screen. Features whose content comes from Truecaller's " +
+        "instead of Free, and hides the after-call screen (switch in Loki Patches > Calls). Features whose content comes from Truecaller's " +
         "servers (who viewed me, caller ID for unknown numbers, fraud insurance) open but stay empty - their " +
         "data is not in the app.",
     default = true,
