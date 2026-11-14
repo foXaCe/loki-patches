@@ -72,6 +72,7 @@ plugins:
         - patches-bundle.json
         - patches-list.json
         - README.md
+        - docs/apps/*.md
       message: "chore: Release v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
 
   # Publishes the release with the bundle, and nothing else.

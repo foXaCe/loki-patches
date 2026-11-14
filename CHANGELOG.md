@@ -1,13 +1,15 @@
-## [3.0.0](https://github.com/lokesh-sparrow/loki-patches/compare/v2.1.2...v3.0.0) (2026-11-14)
+## 3.0.0 (2026-11-14)
 
-### ⚠ BREAKING CHANGES
+### New Apps
+- **Splitwise:** Pro features, no Pro ads and upsells, AMOLED black (switch in Loki Patches › Appearance), analytics and crash reporting removed, and Google sign-in through MicroG-RE.
+- **Truecaller:** premium features, the after-call screen hidden (switch in Loki Patches › Calls), and Google sign-in and Drive backup through MicroG-RE. The Loki Patches entry replaces the Android watch entry.
+- **Doc Scanner:** full version, declutter, allow clone, and Google sign-in through MicroG-RE.
 
-* the bundle now covers four apps instead of LinkedIn only.
-Nothing changes for LinkedIn users; the major version marks the new scope.
+### New Features
+- **LinkedIn:** Loki Patches menu: Patch status, Backup & restore to a file, Diagnostics with Copy and Share report, and full-screen About and Credits pages. Same patches and settings as before; updates in place.
+- Change package name and Remove ads and trackers: new patches for any app, off by default.
 
-### ✨ New Features
-
-* one bundle for LinkedIn, Splitwise, Truecaller and Doc Scanner ([d8bf57a](https://github.com/lokesh-sparrow/loki-patches/commit/d8bf57a19698f40e98b9688fd9a806cc1fae7e60))
+**36 patches for 4 apps.** Full list in the [README](https://github.com/lokesh-sparrow/loki-patches#apps).
 
 ## 2.1.2 (2026-11-13)
 
