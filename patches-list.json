@@ -1,7 +1,44 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "2.1.2",
+  "version": "3.0.0",
   "patches": [
+    {
+      "name": "AMOLED black (Splitwise)",
+      "description": "Real black instead of dark grey in Splitwise's dark mode: backgrounds, screens, bottom sheets, the status and navigation bars and the group charts. Cards stay a shade lighter so they stand out. AMOLED screens switch black pixels off, which saves battery. Light mode is unchanged. Can be switched off in Loki Patches > Appearance.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch",
+        "ResourcePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.Splitwise.SplitwiseMobile",
+          "name": "Splitwise",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2F7D5B",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "26.11.1",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
     {
       "name": "AMOLED black bars",
       "description": "Turns the dark top bar, bottom bar, side menu and the other screens the app draws pure black, matching the feed that the AMOLED black setting already covers. Needs Material You.",
@@ -485,6 +522,82 @@
       "options": []
     },
     {
+      "name": "Enable premium features (Splitwise)",
+      "description": "Treats the account as Pro and switches on the paid features: unlimited expense entries, search, charts, spreadsheet export, currency conversion, group totals history and stats, default splits, reminders, balance alerts, trip dates, larger receipt images and itemization.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch",
+        "ResourcePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.Splitwise.SplitwiseMobile",
+          "name": "Splitwise",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2F7D5B",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "26.11.1",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Enable premium features (Truecaller)",
+      "description": "Makes every premium feature the app decides on the device available, and the plan read as active instead of Free, and stops the after-call screen. Features whose content comes from Truecaller's servers (who viewed me, caller ID for unknown numbers, fraud insurance) open but stay empty - their data is not in the app.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch",
+        "BytecodePatch",
+        "BytecodePatch",
+        "ResourcePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.truecaller",
+          "name": "Truecaller",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#0B6EFD",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "26.43.5",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Feed filters",
       "description": "Adds a set of filters that are off until turned on in Loki Patches: focus mode, celebrations, job cards, reposts, posts from other people's activity, \"Recommended for you\", video posts, games, the \"New posts\" pill and \"See translation\".",
       "default": true,
@@ -536,23 +649,10 @@
     },
     {
       "name": "GmsCore support",
-      "description": "MicroG-RE integration: routes Google sign-in and Google APIs (such as Google Drive) through MicroG-RE instead of Google Play services, so they work in the patched app. MicroG-RE has to be installed and signed in to a Google account.",
+      "description": "Routes \"Continue with Google\" and Firebase push through MicroG-RE (GmsCore) instead of Google Play services. Signs the FCM registration with LinkedIn's original certificate, so notifications still arrive on a re-signed build. MicroG-RE has to be installed and signed in to a Google account.",
       "default": false,
       "category": null,
       "dependencies": [
-        "ResourcePatch",
-        "BytecodePatch"
-      ],
-      "compatiblePackages": null,
-      "options": []
-    },
-    {
-      "name": "GmsCore support",
-      "description": "Routes \"Continue with Google\" through microG RE (GmsCore) instead of Google Play services, so signing in works in patched LinkedIn. microG RE has to be installed and signed in to a Google account.",
-      "default": false,
-      "category": null,
-      "dependencies": [
-        "BytecodePatch",
         "ResourcePatch"
       ],
       "compatiblePackages": [
@@ -580,6 +680,118 @@
             },
             {
               "version": "4.1.1270",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "GmsCore support (Doc Scanner)",
+      "description": "MicroG-RE integration for Doc Scanner: routes Google sign-in and Google Drive through MicroG-RE instead of Google Play services, and keeps ML Kit's module loader on real Play services so receipt OCR keeps working. MicroG-RE has to be installed and signed in to a Google account.",
+      "default": false,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.cv.docscanner",
+          "name": "Doc Scanner",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "6.9.9",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "GmsCore support (Splitwise)",
+      "description": "MicroG-RE integration for Splitwise: routes Google sign-in and Google Drive through MicroG-RE instead of Google Play services, and keeps ML Kit's module loader on real Play services so receipt OCR keeps working. MicroG-RE has to be installed and signed in to a Google account.",
+      "default": false,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.Splitwise.SplitwiseMobile",
+          "name": "Splitwise",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2F7D5B",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "26.11.1",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "GmsCore support (Truecaller)",
+      "description": "Routes Google sign-in, the Google Drive backup of contacts and call logs, and Firebase push through MicroG-RE (GmsCore) instead of Google Play services. Signs the FCM registration with Truecaller's original certificate, so notifications still arrive on a re-signed build. MicroG-RE has to be installed and signed in to a Google account.",
+      "default": false,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.truecaller",
+          "name": "Truecaller",
+          "description": null,
+          "apkFileType": "APKM",
+          "appIconColor": "#0B6EFD",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "26.43.5",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
@@ -630,6 +842,43 @@
             },
             {
               "version": "4.1.1270",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Hide Pro ads and upsells",
+      "description": "Removes the full-screen ad after adding an expense, the ad in Activity, the Pro diamond, the Pro account and Pro Duo cards, the Pro Pass prompts, the Pro tour screen, the hiring promo and the rate-the-app prompt.",
+      "default": true,
+      "category": null,
+      "dependencies": [
+        "BytecodePatch",
+        "ResourcePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.Splitwise.SplitwiseMobile",
+          "name": "Splitwise",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2F7D5B",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "26.11.1",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
@@ -1139,6 +1388,43 @@
           "values": null
         }
       ]
+    },
+    {
+      "name": "Remove analytics and crash reporting",
+      "description": "Turns off Firebase Analytics, Crashlytics and the advertising-ID collection the app declares in its manifest.",
+      "default": false,
+      "category": null,
+      "dependencies": [
+        "ResourcePatch",
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "com.Splitwise.SplitwiseMobile",
+          "name": "Splitwise",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2F7D5B",
+          "signatures": null,
+          "targets": [
+            {
+              "version": "26.11.1",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": true,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
     },
     {
       "name": "Remove gaps and dividers",

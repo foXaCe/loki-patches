@@ -156,7 +156,26 @@ LinkedIn's menu also has search and the language picker.
 ## Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v2.1.2](https://github.com/lokesh-sparrow/loki-patches/releases/tag/v2.1.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;23 patches total
+> **[v3.0.0](https://github.com/lokesh-sparrow/loki-patches/releases/tag/v3.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;36 patches total
+<details open>
+<summary><img src="assets/icons/com.Splitwise.SplitwiseMobile.png" width="20" height="20" align="top" alt=""> Splitwise&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
+<br>
+
+**🎯 Supported versions:**
+
+| 26.11.1 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [AMOLED black (Splitwise)](#amoled-black-splitwise) | Real black instead of dark grey in Splitwise's dark mode: backgrounds, screens, bottom sheets, the status and navigation bars and the group charts. Cards stay a shade lighter so they stand out. AMOLED screens switch black pixels off, which saves battery. Light mode is unchanged. Can be switched off in Loki Patches > Appearance. |  |
+| [Enable premium features (Splitwise)](#enable-premium-features-splitwise) | Treats the account as Pro and switches on the paid features: unlimited expense entries, search, charts, spreadsheet export, currency conversion, group totals history and stats, default splits, reminders, balance alerts, trip dates, larger receipt images and itemization. |  |
+| [GmsCore support (Splitwise)](#gmscore-support-splitwise) | MicroG-RE integration for Splitwise: routes Google sign-in and Google Drive through MicroG-RE instead of Google Play services, and keeps ML Kit's module loader on real Play services so receipt OCR keeps working. MicroG-RE has to be installed and signed in to a Google account. |  |
+| [Hide Pro ads and upsells](#hide-pro-ads-and-upsells) | Removes the full-screen ad after adding an expense, the ad in Activity, the Pro diamond, the Pro account and Pro Duo cards, the Pro Pass prompts, the Pro tour screen, the hiring promo and the rate-the-app prompt. |  |
+| [Remove analytics and crash reporting](#remove-analytics-and-crash-reporting) | Turns off Firebase Analytics, Crashlytics and the advertising-ID collection the app declares in its manifest. |  |
+
+</details>
+
 <details open>
 <summary><img src="assets/icons/com.linkedin.android.svg" width="20" height="20" align="top" alt=""> LinkedIn&nbsp;&nbsp;•&nbsp;&nbsp;23 patches</summary>
 <br>
@@ -176,7 +195,7 @@ LinkedIn's menu also has search and the language picker.
 | [Disable double-tap like](#disable-double-tap-like) | A double tap on a post or a photo no longer likes it. |  |
 | [Download media](#download-media) | Puts a download button in the full screen photo, video and document viewer; documents (PDFs and carousels) are saved as a single PDF. |  |
 | [Feed filters](#feed-filters) | Adds a set of filters that are off until turned on in Loki Patches: focus mode, celebrations, job cards, reposts, posts from other people's activity, "Recommended for you", video posts, games, the "New posts" pill and "See translation". |  |
-| [GmsCore support](#gmscore-support) | Routes "Continue with Google" through microG RE (GmsCore) instead of Google Play services, so signing in works in patched LinkedIn. microG RE has to be installed and signed in to a Google account. |  |
+| [GmsCore support](#gmscore-support) | Routes "Continue with Google" and Firebase push through MicroG-RE (GmsCore) instead of Google Play services. Signs the FCM registration with LinkedIn's original certificate, so notifications still arrive on a re-signed build. MicroG-RE has to be installed and signed in to a Google account. |  |
 | [Hide Premium upsells](#hide-premium-upsells) | Drops the Premium and AI upsell cards and banners, on profiles and in the Me panel too. |  |
 | [Hide ads](#hide-ads) | Removes sponsored (promoted) posts from the feed. |  |
 | [Hide bottom tabs](#hide-bottom-tabs) | Adds switches to take My Network and Jobs out of the bottom bar. |  |
@@ -191,6 +210,51 @@ LinkedIn's menu also has search and the language picker.
 | [Sanitize share links](#sanitize-share-links) | Strips the tracking parameters from LinkedIn links that get copied or shared. |  |
 | [Swipe between feeds](#swipe-between-feeds) | Swipe left and right on the home feed to switch between For you and Network, like on X. |  |
 | [Tap to hide in viewers](#tap-to-hide-in-viewers) | Tap a video or document in full screen to hide the caption and buttons, like photos. |  |
+
+</details>
+
+<details open>
+<summary><img src="assets/icons/com.cv.docscanner.png" width="20" height="20" align="top" alt=""> Doc Scanner&nbsp;&nbsp;•&nbsp;&nbsp;4 patches</summary>
+<br>
+
+**🎯 Supported versions:**
+
+| 6.9.9 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Allow clone](#allow-clone) | Lets the app run under a package name made by the Change package name patch: the app compares its own package name with the original at start-up and shuts itself down when they differ. |  |
+| [Declutter](#declutter) | Removes the promo banner on the home screen and the cross-promotion and cloud-login cards on the save-success screen. |  |
+| [Enable premium features](#enable-premium-features) | Turns on the app's paid features (unlimited scans, cloud upload, OCR, PDF passwords, compression, signatures, themes). The app skips its ad slots for paid users, so the ads go away with them. |  |
+| [GmsCore support (Doc Scanner)](#gmscore-support-doc-scanner) | MicroG-RE integration for Doc Scanner: routes Google sign-in and Google Drive through MicroG-RE instead of Google Play services, and keeps ML Kit's module loader on real Play services so receipt OCR keeps working. MicroG-RE has to be installed and signed in to a Google account. |  |
+
+</details>
+
+<details open>
+<summary><img src="assets/icons/com.truecaller.png" width="20" height="20" align="top" alt=""> Truecaller&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+**🎯 Supported versions:**
+
+| 26.43.5 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Enable premium features (Truecaller)](#enable-premium-features-truecaller) | Makes every premium feature the app decides on the device available, and the plan read as active instead of Free, and stops the after-call screen. Features whose content comes from Truecaller's servers (who viewed me, caller ID for unknown numbers, fraud insurance) open but stay empty - their data is not in the app. |  |
+| [GmsCore support (Truecaller)](#gmscore-support-truecaller) | Routes Google sign-in, the Google Drive backup of contacts and call logs, and Firebase push through MicroG-RE (GmsCore) instead of Google Play services. Signs the FCM registration with Truecaller's original certificate, so notifications still arrive on a re-signed build. MicroG-RE has to be installed and signed in to a Google account. |  |
+
+</details>
+
+<details open>
+<summary>🌐 Universal&nbsp;&nbsp;•&nbsp;&nbsp;2 patches</summary>
+<br>
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [Change package name](#change-package-name) | Changes the package name by adding a suffix (".loki" by default), so the patched app installs next to the original app instead of replacing it. Some apps check their own package name and need a small extra patch to run under the new one. | • Package suffix |
+| [Remove ads and trackers](#remove-ads-and-trackers) | Removes ads, analytics and crash reporting, and the advertising ID. | • Ads<br>• Analytics and crash reporting<br>• Advertising ID |
 
 </details>
 

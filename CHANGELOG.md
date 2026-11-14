@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/lokesh-sparrow/loki-patches/compare/v2.1.2...v3.0.0) (2026-11-14)
+
+### ⚠ BREAKING CHANGES
+
+* the bundle now covers four apps instead of LinkedIn only.
+Nothing changes for LinkedIn users; the major version marks the new scope.
+
+### ✨ New Features
+
+* one bundle for LinkedIn, Splitwise, Truecaller and Doc Scanner ([d8bf57a](https://github.com/lokesh-sparrow/loki-patches/commit/d8bf57a19698f40e98b9688fd9a806cc1fae7e60))
+
 ## 2.1.2 (2026-11-13)
 
 ### Fixes
