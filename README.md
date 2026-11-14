@@ -6,7 +6,7 @@
 
 [![Latest release](https://img.shields.io/github/v/release/lokesh-sparrow/loki-patches?sort=semver&style=for-the-badge&label=release&labelColor=0d1117&color=22d3ee)](https://github.com/lokesh-sparrow/loki-patches/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/lokesh-sparrow/loki-patches/total?style=for-the-badge&labelColor=0d1117&color=0ea5e9)](https://github.com/lokesh-sparrow/loki-patches/releases)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-4.1.1270-2563eb?style=for-the-badge&labelColor=0d1117)](#patches)
+[![Apps](https://img.shields.io/badge/apps-4-2563eb?style=for-the-badge&labelColor=0d1117)](#patches)
 [![Morphe](https://img.shields.io/badge/patches%20for-Morphe-06b6d4?style=for-the-badge&labelColor=0d1117)](https://morphe.software)
 [![License](https://img.shields.io/github/license/lokesh-sparrow/loki-patches?style=for-the-badge&labelColor=0d1117&color=6e7681)](LICENSE)
 
@@ -18,17 +18,22 @@
 
 <a href="https://morphe.software/add-source?github=lokesh-sparrow/loki-patches&name=Loki%20Patches"><img src=".github/assets/add-to-morphe.svg" alt="Add to Morphe" height="55"/></a>
 
-<sub>Stable releases. Made for LinkedIn <b>4.1.1270</b>. Turn off auto-update for LinkedIn in Play Store, or it replaces the patched app.</sub>
+<sub>Stable releases. One source for <b>LinkedIn</b>, <b>Splitwise</b>, <b>Truecaller</b> and <b>Doc Scanner</b>. Turn off Play Store auto-update for the apps you patch, or it replaces them.</sub>
 
 </div>
 
 > [!NOTE]
-> Built and maintained by **Lokesh Sparrow**. You patch the LinkedIn app on your own phone with Morphe
-> Manager; nothing is sent anywhere. Not affiliated with LinkedIn or the Morphe project.
+> Built and maintained by **Lokesh Sparrow**. You patch the apps on your own phone with Morphe Manager;
+> nothing is sent anywhere. Not affiliated with LinkedIn, Splitwise, Truecaller, Doc Scanner or the Morphe project.
+>
+> **Already using Loki Patches for LinkedIn?** Nothing changes for you: same source, same patches, same settings.
+> Update in Morphe Manager as usual.
 
 ---
 
 ## Features
+
+### LinkedIn
 
 | | |
 |---|---|
@@ -49,6 +54,40 @@
 | ⋯ **Post menu items** | Copy text, Download media and Save as PDF in a post's menu |
 | 🧭 **Hide bottom tabs** | Take My Network and Jobs out of the bottom bar |
 | 🔑 **Google sign-in** | "Continue with Google" through microG RE |
+
+### Splitwise
+
+| | |
+|---|---|
+| ⭐ **Pro features** | Unlimited expenses, receipt scanning, charts, search, currency conversion, itemization, default splits, totals history and export |
+| 🚫 **No Pro upsells** | The "Get Pro" cards, banners and Pro rows are gone |
+| ⚫ **AMOLED black** | Real black in dark mode, switchable in the Loki Patches menu |
+| 🔑 **Google sign-in** | Through microG RE (optional patch) |
+
+### Truecaller
+
+| | |
+|---|---|
+| ⭐ **Premium features** | No ads, premium badge, incognito, ghost call, extended spam blocking, call recording, announce call, family sharing |
+| 📵 **No after-call screen** | Skip the screen Truecaller shows when a call ends (switchable) |
+| ☁️ **Google sign-in and Drive backup** | Through microG RE (optional patch) |
+
+Features whose content comes from Truecaller's servers (who viewed me, who searched for me, caller ID for unknown
+numbers, fraud insurance) open but stay empty.
+
+### Doc Scanner
+
+| | |
+|---|---|
+| ⭐ **Full version** | Premium unlocked |
+| 🧹 **Declutter** | Promotions and "follow us" clutter removed |
+| 👯 **Allow clone** | Works next to the original when installed with a changed package name |
+| 🔑 **Google sign-in** | Cloud sign-in through microG RE (optional patch) |
+
+### Every app
+
+The **Loki Patches menu**: patch status, settings backup to a file, diagnostics with a shareable bug report, the
+update check, and an optional app-drawer icon. It is inside each app (see [Settings](#settings)).
 
 ### Anonymous profile viewing
 
@@ -80,18 +119,36 @@ You need an Android phone and [Morphe Manager](https://morphe.software).
 
 1. In Morphe Manager, **[add the Loki Patches source](https://morphe.software/add-source?github=lokesh-sparrow/loki-patches&name=Loki%20Patches)**
    (or add `https://github.com/lokesh-sparrow/loki-patches` by hand). It gets stable releases only.
-2. Choose **LinkedIn**, and download the version Morphe Manager recommends from APKMirror. Take the
-   *Android 10+* download, which is a plain APK; the bundle variants cannot be patched.
+2. Choose the app, and download the version Morphe Manager recommends from APKMirror:
+
+   | App | Download |
+   |---|---|
+   | LinkedIn | the *Android 10+* plain **APK** (the bundle variants cannot be patched) |
+   | Splitwise | the plain **APK** |
+   | Truecaller | the **APKM** bundle |
+   | Doc Scanner | the **APKM** bundle |
+
 3. Patch it and install it.
 
-If you used another LinkedIn patch source before, patch with Loki Patches only, not both: picking the
-same patches from two sources applies them twice.
+Use one patch source per app. If you add another source for the same app, or keep an older copy of this one,
+switch it off in Manager first: picking the same patches from two sources applies them twice and the result may
+not install.
 
 ## Settings
 
-All the options sit on one screen called **Loki Patches**. Reach it from the **Me** panel (tap your profile
-photo) or by long pressing the LinkedIn icon on your home screen, then the **Loki Patches** entry. The same
-screen has a search box, settings backup and restore, the update check, and the language picker.
+Every app gets the same **Loki Patches** menu. Open it from inside the app, or by long pressing the app's icon on
+your home screen:
+
+| App | Inside the app |
+|---|---|
+| LinkedIn | **Me** panel (tap your profile photo) |
+| Splitwise | **Account** tab |
+| Truecaller | profile menu, or **Settings**: the **Loki Patches** entry with the puzzle icon |
+| Doc Scanner | side menu |
+
+The menu has the app's own pages, then the same pages everywhere: **Patch status**, **Backup & restore** (save your
+settings to a file you choose, and restore it, even after reinstalling), **Diagnostics**, **General** and **About**.
+LinkedIn's menu also has search and the language picker.
 
 > [!IMPORTANT]
 > Please don't share patched APKs. Share this source instead, so everyone gets the latest fixes.
@@ -150,9 +207,10 @@ It's experimental. It stops the app from sending the analytics events of profile
 counted visits in our tests on 4.1.1270. LinkedIn could change that in an update. If someone still sees you, please
 report it.
 
-**I can't find the Loki Patches settings.**
-The home screen shortcut only appears once LinkedIn has been opened at least once, and some launchers hide
-shortcuts entirely, so use the Me panel instead. If the entry is missing there as well, confirm on the
+**I can't find the Loki Patches menu.**
+The home screen shortcut only appears once the app has been opened at least once, and some launchers hide
+shortcuts entirely, so use the entry inside the app instead (see [Settings](#settings)), or switch on
+**General → Show in the app drawer**. If the entry is missing there as well, confirm on the
 [patches list](#patches) that your LinkedIn version is supported, and attach a diagnostic report.
 
 **I can't sign in with Google.**
@@ -167,8 +225,9 @@ built with. Restarting LinkedIn after a change is still worth it, but those scre
 
 ## Reporting a bug
 
-Switch on **Other → Diagnostic logging** in the Loki Patches settings, reproduce the problem, then use
-**Copy diagnostic report** and paste the text into a [bug report](https://github.com/lokesh-sparrow/loki-patches/issues/new/choose).
+In the Loki Patches menu, open **Diagnostics**, switch on **Diagnostic logging**, reproduce the problem, then use
+**Copy report** (or **Share report**) and paste the text into a [bug report](https://github.com/lokesh-sparrow/loki-patches/issues/new/choose).
+Say which app it is about.
 Anything that could identify you (links, IDs, e-mail addresses) is filtered out of the report before it is copied.
 
 ## Building from source
@@ -183,7 +242,7 @@ You need JDK 17 or newer, the Android SDK, and a GitHub token with `read:package
 ## Disclaimer
 
 Loki Patches is an independent project. Neither LinkedIn nor the Morphe project made it, endorses it or is
-involved in it. It removes ads and clutter and adds features; it does not unlock paid features or paid content.
+involved in it. It removes ads and clutter and adds features.
 Modifying an app can conflict with that app's terms of service, and you install the result at your own risk.
 
 ## License
