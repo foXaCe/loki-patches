@@ -449,6 +449,12 @@ public class SettingsActivity extends Activity {
                 }
             });
         }
+        if (linkedIn && Settings.isGmsCoreSupportIncluded()) {
+            page.sw(Settings.GMS_CORE_BATTERY_REMINDER, true, "microG RE battery reminder",
+                    "Reminds you when Android limits microG RE in the background. Notifications and Google sign-in "
+                            + "go through microG RE, so they can arrive late or fail while it is limited.");
+            page.rows.get(page.rows.size() - 1).restart = false;
+        }
         if (linkedIn) {
             page.shown("Language", () -> languageNames()[languageIndex()], this::chooseLanguage, YES);
         }
