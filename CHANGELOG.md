@@ -1,3 +1,10 @@
+## 3.1.0 (2026-11-16)
+
+### New Features
+- "Don't remind me" on the microG RE battery reminder, with a switch to turn it back on.
+
+**36 patches for 4 apps.** Full list in the [README](https://github.com/lokesh-sparrow/loki-patches#apps).
+
 ## 3.0.1 (2026-11-14)
 
 ### Fixes
