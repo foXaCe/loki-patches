@@ -1,3 +1,10 @@
+## 3.1.1 (2026-11-16)
+
+### Fixes
+- Keep the scroll position when going back.
+
+**36 patches for 4 apps.** Full list in the [README](https://github.com/lokesh-sparrow/loki-patches#apps).
+
 ## 3.1.0 (2026-11-16)
 
 ### New Features
