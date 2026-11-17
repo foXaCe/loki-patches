@@ -1,3 +1,10 @@
+## 3.2.0 (2026-11-17)
+
+### New Features
+- **MX Player Pro:** MX Player Pro joins the bundle.
+
+**38 patches for 5 apps.** Full list in the [README](https://github.com/lokesh-sparrow/loki-patches#apps).
+
 ## 3.1.1 (2026-11-16)
 
 ### Fixes
