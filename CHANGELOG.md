@@ -1,7 +1,7 @@
 ## 3.2.0 (2026-11-17)
 
 ### New Apps
-- **MX Player Pro:** MX Player Pro 1.93.4 joins the bundle. Every audio codec (AC-3, E-AC-3, DTS, TrueHD) is built into the patched app, the Pro licence check is skipped, and Loki Patches opens from the Me page, from MX's Settings and from a long press on the app icon.
+- **MX Player Pro:** MX Player Pro 1.93.4 joins the bundle. Every audio codec (AC-3, E-AC-3, DTS, TrueHD) is built into the patched app and the Pro licence check is skipped.
 
 ### Fixes
 - **LinkedIn, Splitwise, Truecaller, Doc Scanner:** Patch status lists every patch an app can carry, including the advertising-ID and analytics removal.
