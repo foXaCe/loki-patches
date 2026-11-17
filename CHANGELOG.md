@@ -1,3 +1,10 @@
+## 3.2.1 (2026-11-17)
+
+### Fixes
+- The bundle icon is the Loki L again.
+
+**38 patches for 5 apps.** Full list in the [README](https://github.com/lokesh-sparrow/loki-patches#apps).
+
 ## 3.2.0 (2026-11-17)
 
 ### New Apps
