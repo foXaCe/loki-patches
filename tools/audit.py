@@ -125,6 +125,24 @@ def check_row_builders():
                  "builds a row without copying the neighbour's margins - the row will not line up")
 
 
+def check_featured():
+    """The Featured row is capped, and every app in it can actually render."""
+    data = json.loads(read(os.path.join(ROOT, "apps.json")))
+    featured = [(a.get("featured"), name, a) for name, a in data["apps"].items() if a.get("featured")]
+    if len(featured) > 5:
+        fail("featured", "apps.json",
+             f"{len(featured)} apps are featured; the row holds 5 - extra apps still appear in the index")
+    seen = set()
+    for position, package, app in featured:
+        if position in seen:
+            fail("featured", "apps.json", f"{app['name']} reuses featured position {position}")
+        seen.add(position)
+        if not app.get("blurb"):
+            fail("featured", "apps.json", f"{app['name']} is featured with no blurb")
+        if not os.path.exists(os.path.join(ROOT, "docs", "apps", app["slug"] + ".md")):
+            fail("featured", "apps.json", f"{app['name']} is featured but has no docs page")
+
+
 def check_docs_claims():
     """A patch count in prose must match the patches that exist."""
     count = len(set(re.findall(r'name\s*=\s*"([^"]+)"', "".join(read(p) for p in walk(PATCHES, ".kt")))))
@@ -141,6 +159,7 @@ def main():
     check_apps()
     check_logs()
     check_row_builders()
+    check_featured()
     check_docs_claims()
     if not failures:
         print("audit: clean")

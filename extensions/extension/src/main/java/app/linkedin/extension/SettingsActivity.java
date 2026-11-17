@@ -486,7 +486,7 @@ public class SettingsActivity extends Activity {
     private LinearLayout content;
     private ScrollView scroll;
 
-    // Where each screen was left scrolled. Acrobat, LinkedIn and the rest share this screen, and every visit
+    // Where each screen was left scrolled. Every app in the bundle shares this screen, and every visit
     // used to start at the top: going back from a page (or About) threw away the position the user had
     // scrolled to. Keyed by screen (see screenKey), so a page also reopens where it was left.
     private final Map<String, Integer> scrollOffsets = new HashMap<>();
