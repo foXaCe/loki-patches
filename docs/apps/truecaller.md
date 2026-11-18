@@ -12,9 +12,11 @@
 
 | Feature | What you get |
 |---|---|
-| ⭐ **Premium features** | No ads, premium badge, incognito, ghost call, extended spam blocking, call recording, announce call, family sharing |
-| 📵 **No after-call screen** | The screen Truecaller shows when a call ends is skipped, with a switch in the Loki Patches menu |
-| ☁️ **Google sign-in and Drive backup** | Through MicroG-RE (optional patch) |
+| ⭐ **Premium features** | Gold plan, premium badge, incognito, ghost call, extended spam blocking, call recording, announce call |
+| 🚫 **No ads** | Call history, after-call screen, search results and the rest of the app (its own patch, works without premium) |
+| 📵 **No after-call screen** | The screen Truecaller shows when a call ends is skipped, missed calls included, with a switch in the Loki Patches menu |
+| 🕵️ **Anonymous viewing and search** | Opening a profile or searching a number does not tell the other person, with switches in Loki Patches › Privacy |
+| ☁️ **Google sign-in, Drive backup and notifications** | Through MicroG-RE (optional patch) |
 
 ## How-to
 
