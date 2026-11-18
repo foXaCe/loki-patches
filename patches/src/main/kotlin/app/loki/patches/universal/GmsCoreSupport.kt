@@ -3,22 +3,22 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-package app.docscanner.patches.universal
+package app.loki.patches.universal
 
-import app.loki.patches.universal.menuPatch
-import app.docscanner.patches.shared.Constants.COMPATIBILITY_DOCSCANNER
-import app.loki.patches.universal.OriginalApp
-import app.loki.patches.universal.recordOriginalAppPatch
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.BytecodePatchContext
+import app.morphe.patcher.patch.Compatibility
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
 import app.morphe.patcher.patch.stringOption
 import app.morphe.patcher.util.proxy.mutableTypes.MutableClass
 import com.android.tools.smali.dexlib2.Opcode
+import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.iface.ClassDef
+import com.android.tools.smali.dexlib2.iface.Method
+import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.Instruction
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
@@ -504,6 +504,9 @@ com.google
     """.trimIndent()
 )
 
+/** Certificate SHA-1 of the unpatched app, handed from the manifest step to the bytecode step. */
+private var originalSignatureSha1 = ""
+
 /** Neither side of the redirect is a plain rename, so the manifest is patched separately from the dex. */
 private val gmsCoreSupportResourcePatch = resourcePatch {
     dependsOn(recordOriginalAppPatch)
@@ -520,6 +523,7 @@ private val gmsCoreSupportResourcePatch = resourcePatch {
         val signature = signatureOverride?.takeIf { it.isNotBlank() } ?: OriginalApp.signatureSha1
         // Nothing to hand to microG without it; the patch then leaves the app as it is instead of failing.
         if (signature.isEmpty()) return@execute
+        originalSignatureSha1 = signature
         val manifest = get("AndroidManifest.xml")
         manifest.writeText(manifest.readText().replace("com.google.android.c2dm", "$GMS_CORE_VENDOR.android.c2dm"))
 
@@ -546,15 +550,19 @@ private val gmsCoreSupportResourcePatch = resourcePatch {
     }
 }
 
-@Suppress("unused")
-val gmsCoreSupportPatch = bytecodePatch(
-    name = "GmsCore support (Doc Scanner)",
-    description = "MicroG-RE integration for Doc Scanner: routes Google sign-in and Google Drive through " +
-        "MicroG-RE instead of Google Play services, and keeps ML Kit's module loader on real Play services so " +
-        "text recognition (OCR) keeps working on phones with Play services. MicroG-RE has to be installed and signed in to a Google account.",
-    default = false
+/**
+ * GmsCore support for one app, built the same way for every app that signs in with Google: Google sign-in and Drive
+ * go to MicroG-RE instead of Google Play services, ML Kit stays on real Play services, and (when the app uses it)
+ * Firebase push is registered with the app's original certificate so notifications arrive on a re-signed build.
+ * Each app declares its own patch with this, named "GmsCore support (<App>)". LinkedIn and Truecaller keep their own
+ * copies, which carry extra app-specific steps.
+ */
+internal fun appGmsCoreSupportPatch(name: String, description: String, compatibility: Compatibility) = bytecodePatch(
+    name = name,
+    description = description,
+    default = false,
 ) {
-    compatibleWith(COMPATIBILITY_DOCSCANNER)
+    compatibleWith(compatibility)
     dependsOn(gmsCoreSupportResourcePatch)
     dependsOn(menuPatch)
 
@@ -594,6 +602,12 @@ val gmsCoreSupportPatch = bytecodePatch(
                 "ensurePlayServicesAvailable" -> method.addInstructions(0, "return-void")
             }
         }
+
+        // Push needs a Firebase installation first, and Google only issues one when the request names the
+        // certificate the app's API key is bound to. The patched app is signed with another key, so the request is
+        // refused (API_KEY_ANDROID_APP_BLOCKED), push registration then fails with FIS_AUTH_ERROR, and the app never
+        // gets notifications. The header gets the original certificate, the same one GmsCore already presents.
+        if (originalSignatureSha1.isNotEmpty()) spoofFirebaseCertificate(originalSignatureSha1.uppercase())
     }
 }
 
@@ -638,3 +652,48 @@ private fun BytecodePatchContext.replaceStrings(rename: (String) -> String?): In
 private fun Instruction.stringConstant(): String? =
     if (opcode != Opcode.CONST_STRING && opcode != Opcode.CONST_STRING_JUMBO) null
     else ((this as ReferenceInstruction).reference as StringReference).string
+
+/**
+ * Sets the value of every "X-Android-Cert" request header to [sha1]. Firebase names the header with a string
+ * constant and passes it straight to URLConnection, so the value register is found from that call, whatever the
+ * obfuscated class around it is called.
+ */
+private fun BytecodePatchContext.spoofFirebaseCertificate(sha1: String) {
+    val holders = mutableListOf<ClassDef>()
+    classDefForEach { classDef ->
+        if (classDef.methods.any { method ->
+                method.implementation?.instructions?.any { it.stringConstant() == "X-Android-Cert" } == true
+            }) holders += classDef
+    }
+    holders.forEach { classDef ->
+        mutableClassDefBy(classDef).methods.forEach { method ->
+            val code = method.implementation?.instructions?.toList() ?: return@forEach
+            code.indices.reversed().forEach { index ->
+                if (code[index].stringConstant() != "X-Android-Cert") return@forEach
+                val name = (code[index] as OneRegisterInstruction).registerA
+                val call = (index + 1 until minOf(index + 6, code.size)).firstOrNull { at ->
+                    val instruction = code[at]
+                    val target = (instruction as? ReferenceInstruction)?.reference as? MethodReference
+                    instruction is FiveRegisterInstruction && instruction.registerCount == 3 &&
+                        instruction.registerD == name &&
+                        target?.definingClass == "Ljava/net/URLConnection;" &&
+                        target.name.endsWith("RequestProperty")
+                } ?: return@forEach
+                val value = (code[call] as FiveRegisterInstruction).registerE
+                method.addInstructions(call, "const-string ${method.registerName(value)}, \"$sha1\"")
+            }
+        }
+    }
+}
+
+/**
+ * The smali name of [register]: the first `registerCount - parameters` registers are `v`, the parameters after
+ * them are `p`. Writing `v18` for what the assembler calls `p2` is invalid, and the value being replaced above
+ * can be either.
+ */
+private fun Method.registerName(register: Int): String {
+    val implementation = implementation ?: return "v$register"
+    val parameters = parameterTypes.size + if (AccessFlags.STATIC.isSet(accessFlags)) 0 else 1
+    val locals = implementation.registerCount - parameters
+    return if (register < locals) "v$register" else "p${register - locals}"
+}

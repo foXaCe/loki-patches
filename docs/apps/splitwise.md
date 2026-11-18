@@ -16,7 +16,7 @@
 | 🚫 **No Pro upsells** | The "Get Pro" cards, banners and Pro rows, and the full-screen ad after adding an expense, are gone |
 | ⚫ **AMOLED black** | Real black in dark mode, with a switch in the Loki Patches menu |
 | 🛡️ **No analytics** | Firebase Analytics, Crashlytics and advertising-ID collection turned off |
-| 🔑 **Google sign-in** | Through MicroG-RE (optional patch) |
+| 🔑 **Google sign-in** | Sign-in, Google Drive and notifications through MicroG-RE (optional patch) |
 
 ## How-to
 
