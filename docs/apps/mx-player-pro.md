@@ -14,6 +14,7 @@
 |---|---|
 | 💎 **Pro, licensed** | The Google Play licence check is skipped, so a patched copy never locks itself |
 | 🎞️ **All codecs** | AC3, E-AC3, DTS, DTS-HD, TrueHD and MLP audio play: the custom codec 1.87.0 is fetched while patching, checked, and written into the app in place of MX's stripped decoder |
+| 🔑 **Google Drive sign-in** | Through MicroG-RE (optional patch) |
 
 ## How-to
 
