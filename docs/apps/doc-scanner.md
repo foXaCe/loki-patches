@@ -12,10 +12,11 @@
 
 | Feature | What you get |
 |---|---|
-| ⭐ **Full version** | Unlimited scans, cloud upload, OCR, PDF passwords, compression, signatures and themes; the ads go away with it |
+| ⭐ **Full version** | Unlimited scans, cloud upload, OCR, PDF passwords, compression, signatures and themes |
+| 🚫 **No ads** | Banners, full-screen and rewarded ads (its own patch, works without the full version) |
 | 🧹 **Declutter** | The home-screen promo banner, and the cross-promotion and cloud-login cards after saving, are removed |
 | 👯 **Allow clone** | Runs next to the original app when you also tick **Change package name** |
-| 🔑 **Google sign-in** | Cloud sign-in and Google Drive through MicroG-RE (optional patch) |
+| 🔑 **Google sign-in** | Cloud sign-in, Google Drive and notifications through MicroG-RE (optional patch) |
 
 ## How-to
 
@@ -50,6 +51,6 @@ services on the phone; scanning and everything else work without it.
 |---|---|---|
 | **Allow clone** | Lets the app run under a package name made by the Change package name patch: the app compares its own package name with the original at start-up and shuts itself down when they differ. |  |
 | **Declutter** | Removes the promo banner on the home screen and the cross-promotion and cloud-login cards on the save-success screen. |  |
-| **Enable premium features** | Turns on the app's paid features (unlimited scans, cloud upload, OCR, PDF passwords, compression, signatures, themes). The app skips its ad slots for paid users, so the ads go away with them. |  |
+| **Enable premium features (Doc Scanner)** | Turns on the app's paid features (unlimited scans, cloud upload, OCR, PDF passwords, compression, signatures, themes). The app skips its ad slots for paid users, so the ads go away with them. |  |
 | **GmsCore support (Doc Scanner)** | MicroG-RE integration for Doc Scanner: routes Google sign-in and Google Drive through MicroG-RE instead of Google Play services, and keeps ML Kit's module loader on real Play services so text recognition (OCR) keeps working on phones with Play services. MicroG-RE has to be installed and signed in to a Google account. |  |
 <!-- PATCHES_END -->
